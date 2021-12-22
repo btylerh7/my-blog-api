@@ -7,9 +7,17 @@
     <title>My Brother is a dummy</title>
 </head>
 <body>
-    <form action="/api/blogs">
-        
-
+    <h1>Create Post</h1><br>
+    <form class="form" action="/blogs" method="POST">
+        <label class="label" for="title">Title</label><br>
+        <textarea class="textarea" id="title" name="title" placeholder="Some awesome title" required></textarea><br><br>
+    
+        <label class="label" for="description">Description</label><br>
+        <textarea class="textarea" id="description" name="description" placeholder="An amazing description" required></textarea><br><br>
+    
+        <label class="label" for="body">Body</label><br>
+        <textarea class="textarea" id="body" name="body" placeholder="The best blog post" required></textarea><br>
+        <button type="submit" class="btn-submit">Create Post</button>
     </form>
 </body>
 </html>

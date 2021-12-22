@@ -2,6 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const blogs = require('./routes/blogs')
+
 
 //configure express app and connect to mongodb
 dotenv.config()
@@ -12,13 +14,12 @@ app.use(cors())
 mongoose.connect(myDb,{ useNewUrlParser: true, useUnifiedTopology: true })
 
 
-//Get routes
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
-//Post routes
-
+app.use('/blogs', blogs)
 
 
 
