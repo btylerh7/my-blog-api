@@ -1,10 +1,13 @@
 const express = require('express')
 const router = express.Router()
+const cors = require('cors')
 const Blog = require('../models/blog')
 const marked = require('marked')
 const createDomPurify = require('dompurify')
 const { JSDOM } = require('jsdom')
 const domPurify = createDomPurify(new JSDOM().window)
+
+router.use(cors())
 
 router.get('/', (req, res) => {
     Blog.find()
