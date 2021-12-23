@@ -13,6 +13,17 @@ router.get('/', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+    Blog.findById(req.params.id)
+        .then(response => {
+            return res.json(response)
+        })
+        .catch(err => {
+            console.log(err)
+            return {"error": "something went wrong"}
+        })
+})
+
 
 router.post('/', (req,res) => {
     let blog = new Blog(req.body)
